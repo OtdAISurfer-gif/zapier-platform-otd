@@ -18,7 +18,7 @@ module.exports = (app) => {
     throw new Error(
       `Your integration is missing required info (${missingRequiredFields
         .map((field) => field.cliName ?? field.apiName)
-        .join(', ')}). Please, run "zapier register" to add it.`,
+        .join(', ')}). Please, run "zapier-platform register" to add it.`,
     );
   }
 

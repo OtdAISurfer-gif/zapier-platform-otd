@@ -23,7 +23,7 @@ module.exports = async function (options) {
 
   this.config.enumFieldChoices = enumFieldChoices;
 
-  // This enables us to see all available options when running `zapier register --help`
+  // This enables us to see all available options when running `zapier-platform register --help`
   const cmd = options.config.findCommand('register');
   if (cmd && cmd.flags) {
     if (cmd.flags.audience) {

@@ -104,7 +104,7 @@ describe('smoke tests - setup will take some time', function () {
       context.workdir,
       'node_modules',
       '.bin',
-      'zapier',
+      'zapier-platform',
     );
   });
 
@@ -161,14 +161,14 @@ describe('smoke tests - setup will take some time', function () {
     executables.size.should.eql(1);
   });
 
-  it('zapier --version', () => {
+  it('zapier-platform --version', () => {
     const versionOutput = runCommand(context.cliBin, ['--version']);
     versionOutput
       .includes(`CLI version: ${context.package.version}`)
       .should.be.true();
   });
 
-  it('zapier init -t minimal -m commonjs', () => {
+  it('zapier-platform init -t minimal -m commonjs', () => {
     runCommand(
       context.cliBin,
       ['init', 'awesome-app', '-t', 'minimal', '-m', 'commonjs'],
@@ -186,7 +186,7 @@ describe('smoke tests - setup will take some time', function () {
     fs.existsSync(appPackageJson).should.be.true();
   });
 
-  it('zapier init -t minimal -m esm', () => {
+  it('zapier-platform init -t minimal -m esm', () => {
     runCommand(
       context.cliBin,
       ['init', 'awesome-esm-app', '-t', 'minimal', '-m', 'esm'],
@@ -225,7 +225,7 @@ describe('smoke tests - setup will take some time', function () {
     });
   });
 
-  it('zapier scaffold trigger neat (JS)', () => {
+  it('zapier-platform scaffold trigger neat (JS)', () => {
     runCommand(
       context.cliBin,
       ['init', 'scaffold-town', '-t', 'minimal', '-m', 'commonjs'],
@@ -264,7 +264,7 @@ describe('smoke tests - setup will take some time', function () {
     pkg.name.should.containEql('scaffold-town');
   });
 
-  it('zapier scaffold trigger neat (TS)', () => {
+  it('zapier-platform scaffold trigger neat (TS)', () => {
     runCommand(
       context.cliBin,
       ['init', 'scaffold-town-ts', '-t', 'oauth2', '-l', 'typescript'],
@@ -301,7 +301,7 @@ describe('smoke tests - setup will take some time', function () {
     pkg.name.should.containEql('scaffold-town');
   });
 
-  it('zapier integrations', function () {
+  it('zapier-platform integrations', function () {
     if (!context.hasRC) {
       this.skip();
       return;
@@ -314,7 +314,7 @@ describe('smoke tests - setup will take some time', function () {
     result.should.be.Array();
   });
 
-  describe('zapier init w/ templates (runs very slowly)', () => {
+  describe('zapier-platform init w/ templates (runs very slowly)', () => {
     const testableTemplates = [
       { name: 'basic-auth' },
       { name: 'custom-auth' },

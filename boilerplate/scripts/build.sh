@@ -5,7 +5,7 @@
 set -eo pipefail
 
 #
-# Build boilerplate - a zip file that is generated as if you `zapier build` an empty CLI
+# Build boilerplate - a zip file that is generated as if you `zapier-platform build` an empty CLI
 # app. This zip file acts as a runtime for all the UI apps.
 #
 # Usage:

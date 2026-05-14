@@ -4,13 +4,13 @@ This is Zapier's Legacy Scripting Runner, used by Web Builder apps converted to 
 
 This allows you to run methods from existing Scripting code in CLI, and handles the bundle conversion and method availability automatically for you.
 
-You shouldn't have to install anything. This package will be required and installed by your app automatically, if necessary, after running `zapier convert`. You only need [CLI installed](https://docs.zapier.com/platform) (i.e. `npm i -g zapier-platform-cli`).
+You shouldn't have to install anything. This package will be required and installed by your app automatically, if necessary, after running `zapier-platform convert`. You only need [CLI installed](https://docs.zapier.com/platform) (i.e. `npm i -g zapier-platform-cli`).
 
 ## Steps
 
-1. `zapier convert <YOUR_APP_ID> <FOLDER_TO_PUT_APP_INTO>`
+1. `zapier-platform convert <YOUR_APP_ID> <FOLDER_TO_PUT_APP_INTO>`
 2. `cd <FOLDER_TO_PUT_APP_INTO> && npm install`
-3. `zapier test`.
+3. `zapier-platform test`.
 
 Note `scripting.js` should look very familiar to you.
 
@@ -29,7 +29,7 @@ Note this section is intended for Zapier engineers, not for App Developers.
 
 ## Testing
 
-`npm test` runs some unit tests, `npm run ci-test` pulls the "full-test" app and runs `zapier test` in it.
+`npm test` runs some unit tests, `npm run ci-test` pulls the "full-test" app and runs `zapier-platform test` in it.
 
 ## Releasing
 

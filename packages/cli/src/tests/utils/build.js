@@ -46,7 +46,7 @@ describe('build (runs slowly)', function () {
   let tmpDir, entryPoint, corePackage;
 
   before(async () => {
-    // basically does what `zapier init` does
+    // basically does what `zapier-platform init` does
     tmpDir = getNewTempDirPath();
     await copyDir(
       path.resolve(__dirname, '../../../../../example-apps/oauth2'),
@@ -965,7 +965,7 @@ describe('build in yarn workspaces', function () {
     );
     await decompress(zipPath, unzipDir);
 
-    // `zapier build --skip-dep-install` uses the common ancestor of the app
+    // `zapier-platform build --skip-dep-install` uses the common ancestor of the app
     // directory (monorepo.repoDir) and the zapier-platform repo.
     // In GitHub's CI environment, zipRoot will be:
     // - '/' on Linux and macOS
@@ -1495,7 +1495,7 @@ describe('build ESM (runs slowly)', function () {
   let tmpDir, entryPoint, corePackage;
 
   before(async () => {
-    // basically does what `zapier init` does
+    // basically does what `zapier-platform init` does
     tmpDir = getNewTempDirPath();
     await copyDir(
       path.resolve(__dirname, '../../../../../example-apps/oauth2-typescript'),

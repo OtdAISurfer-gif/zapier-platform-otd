@@ -4,4 +4,4 @@
 
 A simple app that demonstrates how to write a simple search action.
 
-> We recommend using the zapier-platform-cli and `zapier init .`  to create an app - you’ll be presented with a list of currently available templates to start with.
+> We recommend using the zapier-platform-cli and `zapier-platform init .`  to create an app - you’ll be presented with a list of currently available templates to start with.

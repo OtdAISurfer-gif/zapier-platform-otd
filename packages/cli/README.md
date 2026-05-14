@@ -1,6 +1,6 @@
 # Zapier Platform CLI
 
-This is the `zapier` CLI, which you can use to build integrations with Zapier.
+This is the `zapier-platform` CLI, which you can use to build integrations with Zapier.
 
 For documentation:
 
@@ -9,5 +9,7 @@ For documentation:
 - [Schema Reference](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md)
 
 ## Development
+
+The published CLI exposes the **`zapier-platform`** command only (as of v19). The legacy **`zapier`** binary has been removed.
 
 See [CONTRIBUTING.md](https://github.com/zapier/zapier-platform/blob/main/CONTRIBUTING.md) and [ARCHITECTURE.md](https://github.com/zapier/zapier-platform/blob/main/packages/cli/ARCHITECTURE.md) of this package in particular.

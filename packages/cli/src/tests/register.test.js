@@ -46,8 +46,8 @@ describe('RegisterCommand', () => {
       .reply(200, registerFieldChoices);
   }
 
-  describe('zapier register should enforce character minimum on title', function () {
-    it('zapier register should enforce character minimum on title flag', async function () {
+  describe('zapier-platform register should enforce character minimum on title', function () {
+    it('zapier-platform register should enforce character minimum on title flag', async function () {
       setup();
 
       const { error } = await runCommand(['register', 't']);
@@ -57,8 +57,8 @@ describe('RegisterCommand', () => {
     });
   });
 
-  describe('zapier register should enforce character limits on flags', function () {
-    it('zapier register should enforce character limit on desc flag', async function () {
+  describe('zapier-platform register should enforce character limits on flags', function () {
+    it('zapier-platform register should enforce character limit on desc flag', async function () {
       setup();
 
       const { error } = await runCommand([
@@ -72,8 +72,8 @@ describe('RegisterCommand', () => {
     });
   });
 
-  describe('zapier register should validate enum fields that are passed in as flags', function () {
-    it('zapier register should throw error for invalid role', async function () {
+  describe('zapier-platform register should validate enum fields that are passed in as flags', function () {
+    it('zapier-platform register should throw error for invalid role', async function () {
       setup();
 
       const { error } = await runCommand(['register', '--role', 'invalidRole']);
@@ -82,7 +82,7 @@ describe('RegisterCommand', () => {
       );
     });
 
-    it('zapier register should throw error for invalid category', async function () {
+    it('zapier-platform register should throw error for invalid category', async function () {
       setup();
 
       const { error } = await runCommand([
@@ -95,7 +95,7 @@ describe('RegisterCommand', () => {
       );
     });
 
-    it('zapier register should throw error for invalid audience', async function () {
+    it('zapier-platform register should throw error for invalid audience', async function () {
       setup();
 
       const { error } = await runCommand([
@@ -109,7 +109,7 @@ describe('RegisterCommand', () => {
     });
   });
 
-  describe('zapier register should accept all data via flags', function () {
+  describe('zapier-platform register should accept all data via flags', function () {
     function setup() {
       return nock(BASE_ENDPOINT)
         .get('/api/platform/cli/apps/fields-choices')
@@ -119,7 +119,7 @@ describe('RegisterCommand', () => {
         .reply(201, privateApp);
     }
 
-    it('zapier register should successfully register an app with all data provided', async function () {
+    it('zapier-platform register should successfully register an app with all data provided', async function () {
       setup();
 
       const { stdout } = await runCommand([
@@ -143,7 +143,7 @@ describe('RegisterCommand', () => {
     });
   });
 
-  describe('zapier register should update existing app', function () {
+  describe('zapier-platform register should update existing app', function () {
     function setup(isPublic) {
       const exportedApp = isPublic ? publicApp : privateApp;
       return nock(BASE_ENDPOINT)
@@ -170,7 +170,7 @@ describe('RegisterCommand', () => {
       );
     });
 
-    it('zapier register should successfully register an app with all data provided', async function () {
+    it('zapier-platform register should successfully register an app with all data provided', async function () {
       setup();
 
       const { stdout } = await runCommand([
@@ -191,7 +191,7 @@ describe('RegisterCommand', () => {
       expect(stdout).to.contain('Integration successfully updated!');
     });
 
-    it('zapier register should not allow a user to update a pre-existing public app', async function () {
+    it('zapier-platform register should not allow a user to update a pre-existing public app', async function () {
       setup(true);
 
       const { error } = await runCommand([
