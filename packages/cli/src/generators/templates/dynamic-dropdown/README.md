@@ -98,10 +98,10 @@ This integration uses the [Star Wars API](https://swapi.dev/) to demonstrate:
 npm install
 
 # Run tests
-zapier test
+zapier-platform test
 
 # Push to Zapier
-zapier push
+zapier-platform push
 ```
 
 Find out more on the latest docs: https://docs.zapier.com/platform

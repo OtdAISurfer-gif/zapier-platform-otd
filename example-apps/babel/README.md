@@ -8,9 +8,9 @@ Run this:
 
 ```bash
 npm run zapier-dev # compiles live
-zapier test
+zapier-platform test
 ```
 
-`zapier build` works as a non-watch command that calls the `npm run _zapier-build` hook, and `zapier push` will make a fresh build using that hook as well.
+`zapier-platform build` works as a non-watch command that calls the `npm run _zapier-build` hook, and `zapier-platform push` will make a fresh build using that hook as well.
 
-> We recommend using the zapier-platform-cli and `zapier init .`  to create an app - you’ll be presented with a list of currently available templates to start with.
+> We recommend using the zapier-platform-cli and `zapier-platform init .`  to create an app - you’ll be presented with a list of currently available templates to start with.

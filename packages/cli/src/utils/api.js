@@ -31,7 +31,7 @@ const readCredentials = (explodeIfMissing = true) => {
     return Promise.resolve(
       readFile(
         constants.AUTH_LOCATION,
-        `Please run \`${colors.cyan('zapier login')}\`.`,
+        `Please run \`${colors.cyan('zapier-platform login')}\`.`,
       )
         .then((buf) => {
           return JSON.parse(buf.toString());
@@ -236,9 +236,9 @@ const getWritableApp = async () => {
   if (!linkedAppConfig.id) {
     throw new Error(
       `This project hasn't yet been associated with an existing Zapier integration.\n\nIf it's a brand new integration, run \`${colors.cyan(
-        'zapier register',
+        'zapier-platform register',
       )}\`.\n\nIf this project already exists in your Zapier account, run \`${colors.cyan(
-        'zapier link',
+        'zapier-platform link',
       )}\` instead.`,
     );
   }
@@ -255,7 +255,7 @@ const getWritableApp = async () => {
       throw new Error(
         `Your credentials are present, but invalid${
           process.env.ZAPIER_BASE_ENDPOINT ? ' in this environment' : ''
-        }. Please run \`${colors.cyan('zapier login')}\` to resolve.`,
+        }. Please run \`${colors.cyan('zapier-platform login')}\` to resolve.`,
       );
     } else if (errOrRejectedResponse.status === 404) {
       // if this fails, we know the issue is they can't see this app
@@ -263,12 +263,12 @@ const getWritableApp = async () => {
         linkedAppConfig.id
       } (or it doesn't exist${
         process.env.ZAPIER_BASE_ENDPOINT ? ' in this environment.' : ''
-      }). Try running \`${colors.cyan('zapier link')}\` to correct that.${
+      }). Try running \`${colors.cyan('zapier-platform link')}\` to correct that.${
         process.env.ZAPIER_BASE_ENDPOINT
           ? `\n\nFor local dev: make sure you've run  \`${colors.cyan(
-              'zapier login',
+              'zapier-platform login',
             )}\` and \`${colors.cyan(
-              'zapier register',
+              'zapier-platform register',
             )}\` while providing ZAPIER_BASE_ENDPOINT.`
           : ''
       }`;
@@ -400,9 +400,9 @@ const downloadSourceZip = async (dst) => {
   if (!linkedAppConfig.id) {
     throw new Error(
       `This project hasn't yet been associated with an existing Zapier integration.\n\nIf it's a brand new integration, run \`${colors.cyan(
-        'zapier register',
+        'zapier-platform register',
       )}\`.\n\nIf this project already exists in your Zapier account, run \`${colors.cyan(
-        'zapier link',
+        'zapier-platform link',
       )}\` instead.`,
     );
   }
@@ -439,7 +439,7 @@ const upload = async (
 
   if (!fs.existsSync(fullZipPath)) {
     throw new Error(
-      'Missing a built integration. Try running `zapier build` first.\nAlternatively, run `zapier push`, which will build and upload in one command.',
+      'Missing a built integration. Try running `zapier-platform build` first.\nAlternatively, run `zapier-platform push`, which will build and upload in one command.',
     );
   }
 

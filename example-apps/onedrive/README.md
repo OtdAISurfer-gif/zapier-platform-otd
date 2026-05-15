@@ -28,16 +28,16 @@ through it all, but be prepared!
 To pull down the code and install the needed dependencies, run:
 
 ```bash
-zapier init --template=onedrive ./
+zapier-platform init --template=onedrive ./
 npm install
 ```
-> We recommend using the zapier-platform-cli and `zapier init .`  to create an app - you’ll be presented with a list of currently available templates to start with.
+> We recommend using the zapier-platform-cli and `zapier-platform init .`  to create an app - you’ll be presented with a list of currently available templates to start with.
 
 ### 2. Seeing Your App on zapier.com
 
-The first step is to do `zapier register 'My Example OneDrive App'`. This logs you in and tells Zapier about your new app.
+The first step is to do `zapier-platform register 'My Example OneDrive App'`. This logs you in and tells Zapier about your new app.
 
-Now try a `zapier push`. At this point, you can go to zapier.com/app/editor and see your app in the Editor.
+Now try a `zapier-platform push`. At this point, you can go to zapier.com/app/editor and see your app in the Editor.
 You won't be able to use the app yet (there are a couple steps required before auth works), but this gives you
 a feel for some of the basic commands of the CLI tool.
 
@@ -49,7 +49,7 @@ and register to obtain your own. When registering your app in MS, the minimal in
 
 1. App Name - Can be anything, like 'My Example Zapier App'
 1. Application Secret - Generate a new password, copying that password somewhere for later
-1. Platform - Choose web. For Redirect URL, run `zapier describe --format=json | grep 'Redirect URI'` in your terminal and paste in the URI provided by Zapier
+1. Platform - Choose web. For Redirect URL, run `zapier-platform describe --format=json | grep 'Redirect URI'` in your terminal and paste in the URI provided by Zapier
 1. Click Save
 
 You now need to tell Zapier what `CLIENT_ID` and `CLIENT_SECRET` to use when doing the OAuth2 flow. OneDrive uses
@@ -57,8 +57,8 @@ the Applicaiton ID of the app you just registered as the `CLIENT_ID`, and the Ap
 You can set those in Zapier like so:
 
 ```bash
-zapier env 1.0.0 CLIENT_ID <app_id>
-zapier env 1.0.0 CLIENT_SECRET <app_secret>
+zapier-platform env 1.0.0 CLIENT_ID <app_id>
+zapier-platform env 1.0.0 CLIENT_SECRET <app_secret>
 ```
 
 You should now be able to go back to zapier.com and connect your OneDrive account!
@@ -66,7 +66,7 @@ You should now be able to go back to zapier.com and connect your OneDrive accoun
 ### 4. Exploring
 
 At this point you have a fully working Zapier app you can build Zaps with. Feel free to make tweaks to your app
-locally, do a `zapier push`, and see the changes take effect in production right away.
+locally, do a `zapier-platform push`, and see the changes take effect in production right away.
 
 ## Testing
 
@@ -85,4 +85,4 @@ The tests will pick those up and run with those credentials.
 The second thing you need to do is update `TEST_RESOURCES` in `test/test-utils.js` with IDs and folder names in your
 OneDrive account. Once that is updated, you should be able to do:
 
-`zapier test`
+`zapier-platform test`

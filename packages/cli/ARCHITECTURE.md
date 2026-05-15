@@ -2,7 +2,7 @@
 
 ## Purpose
 
-- This package, released as `zapier-platform-cli` publicly on [npm](https://www.npmjs.com/package/zapier-platform-cli), powers the Zapier CLI (invoked via the `zapier` command).
+- This package, released as `zapier-platform-cli` publicly on [npm](https://www.npmjs.com/package/zapier-platform-cli), powers the Zapier CLI (invoked via the `zapier-platform` command).
 - Developers install and use this tool to complete operations required to develop an integration on the Zapier platform.
 - The `core`, `schema`, and `cli` packages are always released together under matching version numbers.
 
@@ -13,8 +13,8 @@
 ### Commands
 
 - We use the [oclif](https://github.com/oclif/oclif) (created for the Heroku CLI) to power our CLI
-- Each command (`zapier push`, `zapier test`, etc) gets its own file in the `cli/src/oclif/commands` directory.
-- Some sub-commands live in sub-directories, such as `zapier env:get` (which is found in `cli/src/oclif/commands/env/get.js`).
+- Each command (`zapier-platform push`, `zapier-platform test`, etc) gets its own file in the `cli/src/oclif/commands` directory.
+- Some sub-commands live in sub-directories, such as `zapier-platform env:get` (which is found in `cli/src/oclif/commands/env/get.js`).
 - All commands inherit from `ZapierBaseCommand`, which provides convenient methods for parsing flags, printing structured data, and verifying authentication
 - Command code should be responsible for all user-facing behavior, including:
   - loading indicators
