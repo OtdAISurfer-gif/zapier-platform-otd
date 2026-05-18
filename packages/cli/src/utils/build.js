@@ -492,7 +492,7 @@ const maybeNotifyAboutOutdated = async () => {
           'package.json',
         )} (${colors.grey(notifier.update.current)} → ${colors.green(
           notifier.update.latest,
-        )}) and then running ${colors.red('zapier test')}.`,
+        )}) and then running ${colors.red('zapier-platform test')}.`,
       });
     }
   }
@@ -707,12 +707,12 @@ const _buildFunc = async (
     if (validationErrors.length) {
       debug('\nErrors:\n', validationErrors, '\n');
       throw new Error(
-        'We hit some validation errors, try running `zapier validate` to see them!',
+        'We hit some validation errors, try running `zapier-platform validate` to see them!',
       );
     }
 
     // No need to mention specifically we're validating style checks as that's
-    //   implied from `zapier validate`, though it happens as a separate process
+    //   implied from `zapier-platform validate`, though it happens as a separate process
     const styleChecksResponse = await validateApp(rawDefinition);
 
     if (_.get(styleChecksResponse, ['errors', 'total_failures'])) {
@@ -722,7 +722,7 @@ const _buildFunc = async (
         '\n',
       );
       throw new Error(
-        'We hit some style validation errors, try running `zapier validate` to see them!',
+        'We hit some style validation errors, try running `zapier-platform validate` to see them!',
       );
     }
 
@@ -736,7 +736,7 @@ const _buildFunc = async (
           console.log(colors.yellow(`- ${issue.description}`));
         }
       }
-      console.log(colors.yellow('Run `zapier validate` for more details.'));
+      console.log(colors.yellow('Run `zapier-platform validate` for more details.'));
     }
   } else {
     debug('\nWarning: Skipping Validation');

@@ -290,7 +290,7 @@ const getLocalAppHandler = async ({
         );
       } catch (err) {
         err.message =
-          'Your ESM integration requires a compiled `dist/` directory. Run `zapier build` to compile your code first.\n\n' +
+          'Your ESM integration requires a compiled `dist/` directory. Run `zapier-platform build` to compile your code first.\n\n' +
           err.message;
         throw err;
       }

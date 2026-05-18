@@ -240,11 +240,11 @@ describe('smoke tests - setup will take some time', () => {
           context.workAppDir,
           'node_modules',
           '.bin',
-          'zapier',
+          'zapier-platform',
         );
       });
 
-      it('zapier test', () => {
+      it('zapier-platform test', () => {
         const proc = spawnSync(context.cliBin, ['test'], {
           encoding: 'utf8',
           cwd: context.workAppDir,
@@ -260,7 +260,7 @@ describe('smoke tests - setup will take some time', () => {
         proc.status.should.eql(0);
       });
 
-      it('zapier build', function () {
+      it('zapier-platform build', function () {
         if (!context.hasAppRC) {
           this.skip();
           return;

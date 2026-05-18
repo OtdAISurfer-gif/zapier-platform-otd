@@ -37,7 +37,7 @@ const recordAnalytics = async (command, isValidCommand, args, flags) => {
   );
   const integrationID = integrationIDKey ? args[integrationIDKey] : undefined;
 
-  // Some commands ( like "zapier convert" ) won't have an app directory when called.
+  // Some commands ( like "zapier-platform convert" ) won't have an app directory when called.
   // Instead, having the app ID in the arguments.
   // In this case, we fallback to using "integrationid" in arguments ( if it's there )
   // and don't want to "explode" if appID is missing
